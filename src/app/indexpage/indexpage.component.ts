@@ -1,14 +1,15 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Clipboard } from '@angular/cdk/clipboard';
-import colornames from '../assets/colornames.json';
 import { ScrollingModule } from '@angular/cdk/scrolling';
+import colornames from '../../assets/colornames.json';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css'],
+  selector: 'app-indexpage',
+  templateUrl: './indexpage.component.html',
+  styleUrls: ['./indexpage.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AppComponent {
+export class IndexpageComponent {
   constructor(private clipboard: Clipboard) {}
 
   title = 'colors';
@@ -16,8 +17,5 @@ export class AppComponent {
 
   copyHexCode(hex: string) {
     this.clipboard.copy(hex);
-  }
-  onScroll() {
-    console.log('Estas haciendolo bien muchacho');
   }
 }

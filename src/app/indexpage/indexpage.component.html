@@ -1,0 +1,18 @@
+<div class="backdrop-opacity-100 backdrop-invert">
+  <h1 class="text-9xl italic font-black text-white">Hello world!</h1>
+</div>
+<div class="flex flex-wrap">
+  <cdk-virtual-scroll-viewport
+    class="box-content h-80 w-96 hover:shadow-2xl hover:scale-125 duration-200"
+    [ngStyle]="{ 'background-color': color.hex }"
+    (click)="copyHexCode(color.hex)"
+    itemSize="50"
+    class="viewport"
+    *cdkVirtualFor="let color of colorList"
+  >
+    <h3 class="text-4xl text-slate-50 text-end">
+      {{ color.name }} <br />
+      {{ color.hex }}
+    </h3>
+  </cdk-virtual-scroll-viewport>
+</div>
